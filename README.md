@@ -1,5 +1,7 @@
 # CursoAngularVictorRobles
 
+Repositorio para el curso de Angular de [Victor Robles](https://www.udemy.com/course/curso-de-angular-4-desde-cero-hasta-profesional/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 ## Development server
