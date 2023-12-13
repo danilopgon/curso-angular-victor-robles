@@ -14,15 +14,17 @@ export class EmpleadoComponent {
   public empleado: Empleado;
   public listaEmpleados: Empleado[];
   public mostrarLista: boolean;
+  public color: string;
 
   constructor() {
-    this.mostrarLista = false;
     this.empleado = new Empleado('Kratos', 64, 'Guerrero', true);
     this.listaEmpleados = [
       new Empleado('Daniel López', 29, 'Programador', true),
       new Empleado('Geriberto Rodríguez', 52, 'Contable', true),
       new Empleado('Tomasito', 53, 'Músico', true),
     ];
+    this.mostrarLista = false;
+    this.color = 'blue';
   }
 
   cambiarLista = () => {

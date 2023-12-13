@@ -1,4 +1,12 @@
 <h2>{{title}}</h2>
+<hr />
+<h3>Colores switch</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{'color':color, 'text-transform': 'uppercase'}">Es de color rojo</li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{'color':color, 'text-transform': 'uppercase'}">Es de color azul</li>
+    <li *ngSwitchCase="'green'" [ngStyle]="{'color':color, 'text-transform': 'uppercase'}">Es de color verde</li>
+</ul>
+<hr />
 <h3>Mejor empleado:</h3>
 <ul>
     <li>{{empleado.nombre}}</li>
@@ -6,6 +14,7 @@
     <li>{{empleado.cargo}}</li>
     <li *ngIf="empleado.contratado === true">Contratado</li>
 </ul>
+<hr />
 <button (click)="cambiarLista()">{{mostrarLista === false ? "Mostrar resto de empleados": "Ocultar lista"}}</button>
 <ul *ngIf="mostrarLista === true">
     <li *ngFor="let e of listaEmpleados, let i = index">
@@ -13,5 +22,6 @@
         <p> {{e.nombre}} - {{e.cargo}}</p>
         <p> {{e.edad}}</p>
         <p *ngIf="empleado.contratado === true">Contratado</p>
-    </li>
+    </li>ç
 </ul>
+<hr />
