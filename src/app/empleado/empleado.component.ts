@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Empleado } from './empleado';
 
 @Component({
   selector: 'empleado',
   standalone: true,
   templateUrl: './empleado.component.html',
-  imports: [CommonModule],
+  styleUrl: './empleado.component.css',
+  imports: [CommonModule, FormsModule],
 })
 export class EmpleadoComponent {
   public title = 'Componente Empleados';
@@ -15,6 +17,7 @@ export class EmpleadoComponent {
   public listaEmpleados: Empleado[];
   public mostrarLista: boolean;
   public color: string;
+  public colorSeleccionado: string;
 
   constructor() {
     this.empleado = new Empleado('Kratos', 64, 'Guerrero', true);
@@ -25,6 +28,7 @@ export class EmpleadoComponent {
     ];
     this.mostrarLista = false;
     this.color = 'blue';
+    this.colorSeleccionado = '#cccccc';
   }
 
   cambiarLista = () => {
