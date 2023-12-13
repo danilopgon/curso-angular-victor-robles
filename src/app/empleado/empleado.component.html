@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+<h3>Mejor empleado:</h3>
+<ul>
+    <li>{{empleado.nombre}}</li>
+    <li>{{empleado.edad}}</li>
+    <li>{{empleado.cargo}}</li>
+    <li *ngIf="empleado.contratado === true">Contratado</li>
+</ul>
+<button (click)="cambiarLista()">{{mostrarLista === false ? "Mostrar resto de empleados": "Ocultar lista"}}</button>
+<ul *ngIf="mostrarLista === true">
+    <li *ngFor="let e of listaEmpleados, let i = index">
+        <strong>Empleado {{i + 1}}:</strong>
+        <p> {{e.nombre}} - {{e.cargo}}</p>
+        <p> {{e.edad}}</p>
+        <p *ngIf="empleado.contratado === true">Contratado</p>
+    </li>
+</ul>
