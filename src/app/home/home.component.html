@@ -1,5 +1,16 @@
 <h1>{{title}}</h1>
 <h3>Listado de prendas</h3>
+<hr>
+<p>
+    {{fecha | date:"dd/MM/yyyy" }}
+    /
+    {{fecha | date:"fullDate" | uppercase }}
+    /
+    {{nombre | titlecase}}
+    /
+    {{5 | conversor: 6}}
+</p>
+<hr>
 <input type="text" [(ngModel)]="nuevaPrenda" />
 <button (click)="guardarPrenda()">Añadir prenda</button>
 <p *ngIf="nuevaPrenda"> La prenda a guardar es: {{nuevaPrenda}}</p>
