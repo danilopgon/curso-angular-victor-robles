@@ -1,1 +1,11 @@
 <h1>{{title}}</h1>
+<h3>Listado de prendas</h3>
+<input type="text" [(ngModel)]="nuevaPrenda" />
+<button (click)="guardarPrenda()">Añadir prenda</button>
+<p *ngIf="nuevaPrenda"> La prenda a guardar es: {{nuevaPrenda}}</p>
+<hr>
+<ul>
+    <li *ngFor="let prenda of listadoRopa, let i = index"><button (click)="eliminarPrenda(i)">Eliminar
+            prenda</button>{{prenda}}</li>
+
+</ul>
