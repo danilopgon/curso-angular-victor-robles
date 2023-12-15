@@ -59,3 +59,21 @@
         <li *ngFor="let coche of coches">{{coche.nombre}} / {{coche.caballaje}} / {{coche.color}}</li>
     </ul>
 </div>
+<div *ngIf="posts" [ngStyle]="
+    {
+        'display': 'flex',
+        'flex-direction': 'column',
+        'justify-content': 'center',
+        'align-items': 'center',
+        'background-color': 'lightblue',
+        'padding': '10px',
+        'margin': '5px',
+    }
+">
+    <h4>Listado de articulos</h4>
+    <ul>
+        <li *ngFor="let post of posts">
+            <h2>{{post.title}}</h2>
+            <p>{{post.body}}</p>
+    </ul>
+</div>
