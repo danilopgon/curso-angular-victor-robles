@@ -9,9 +9,13 @@
             [routerLinkActiveOptions]="{ exact: true }">Empleados</a>
         <a [routerLink]="['/contacto']" [routerLinkActive]="['active-link']"
             [routerLinkActiveOptions]="{ exact: true }">Contacto</a>
+        <a [routerLink]="['/coche']" [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{ exact: true }">Coche</a>
     </nav>
+    <div class="container">
 
-    <!-- <fruta /> -->
-    <!-- <empleado /> -->
-    <router-outlet></router-outlet>
+
+
+        <router-outlet></router-outlet>
+    </div>
 </main>

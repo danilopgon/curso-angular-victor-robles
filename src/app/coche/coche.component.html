@@ -1,0 +1,61 @@
+<h1>Componente de coches</h1>
+<div [ngStyle]="
+    {
+        'display': 'flex',
+        'flex-direction': 'column',
+        'justify-content': 'center',
+        'align-items': 'center',
+        'background-color': 'lightblue',
+        'padding': '10px',
+        'margin': '5px',
+        'gap': '5px'
+    }
+">
+    <form #formCoche="ngForm" (ngSubmit)="onSubmit(); formCoche.resetForm()" [ngStyle]="
+    {
+        'display': 'flex',
+        'flex-direction': 'column',
+        'justify-content': 'center',
+        'align-items': 'center',
+        'padding': '10px',
+        'margin': '5px',
+        'gap': '5px'
+    }
+">
+
+        <label>Nombre</label>
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required />
+        <span *ngIf="nombre.touched && !nombre.valid">El nombre del coche es incorrecto</span>
+
+
+        <label>Caballaje</label>
+        <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)]="coche.caballaje" required
+            pattern="[0-9]+" />
+        <span *ngIf="caballaje.touched && !caballaje.valid">El caballaje es incorrecto</span>
+
+
+        <label>Color</label>
+        <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required pattern="[A-Za-z#]+" />
+        <span *ngIf="color.touched && !color.valid">El color es incorrecto</span>
+
+        <button type="submit" [disabled]="!formCoche.form.valid">
+            Guardar
+        </button>
+    </form>
+</div>
+<div [ngStyle]="
+    {
+        'display': 'flex',
+        'flex-direction': 'column',
+        'justify-content': 'center',
+        'align-items': 'center',
+        'background-color': 'lightblue',
+        'padding': '10px',
+        'margin': '5px'
+    }
+">
+    <h4>Listado de coches</h4>
+    <ul>
+        <li *ngFor="let coche of coches">{{coche.nombre}} / {{coche.caballaje}} / {{coche.color}}</li>
+    </ul>
+</div>

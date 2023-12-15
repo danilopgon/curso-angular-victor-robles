@@ -5,6 +5,7 @@ import { FrutaComponent } from './fruta/fruta.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ErrorComponent } from './error/error.component';
+import { CocheComponent } from './coche/coche.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,10 @@ export const routes: Routes = [
   {
     path: 'contacto/:page',
     component: ContactoComponent,
+  },
+  {
+    path: 'coche',
+    component: CocheComponent,
   },
   {
     path: '**',
