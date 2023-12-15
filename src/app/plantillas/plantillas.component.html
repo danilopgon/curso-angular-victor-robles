@@ -1,0 +1,23 @@
+<h2>{{titulo}}</h2>
+
+
+<div *ngIf="administrador; then admin else noAdmin">
+</div>
+
+
+<ng-template #admin>
+    <button (click)="changeAdmin(false)">Desactivar admin</button>
+
+    <h3>Plantilla de admin</h3>
+    <p>Texto de prueba de la plantilla de admin</p>
+
+
+</ng-template>
+
+<ng-template #noAdmin>
+    <button (click)="changeAdmin(true)">Activar admin</button>
+
+    <h3>Plantilla de usuario</h3>
+    <p>Texto de prueba de la plantilla de usuario</p>
+
+</ng-template>
